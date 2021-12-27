@@ -1,6 +1,5 @@
 package xx.yy.testhttp.controller;
 
-import xx.yy.testhttp.Cao;
 import xx.yy.testhttp.User;
 import xx.yy.testhttp.Utils.SerializeUtils;
 import xx.yy.testhttp.jpa.PersonRepository;
@@ -21,7 +20,6 @@ public class UserController {
 
   @RequestMapping("/helloUser/{id}")
   String selectUser(@PathVariable Integer id) {
-//    return userService.selectUser(id).toString()
     return "sss";
   }
 
