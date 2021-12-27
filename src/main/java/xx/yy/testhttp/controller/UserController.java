@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.math.BigInteger;
 import java.util.Objects;
 
 @RestController
@@ -51,6 +52,15 @@ public class UserController {
     }
 
     return "asdf";
+  }
+
+  @RequestMapping("/big")
+  String f(HttpServletRequest req) throws IOException, ClassNotFoundException {
+    String big = req.getParameter("big");
+    System.err.println("big: " + big);
+    BigInteger x = ((BigInteger) SerializeUtils.serializeToObject(big));
+    System.err.println(x.toString());
+    return "chenggong";
   }
 }
 
